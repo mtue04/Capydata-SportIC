@@ -1,0 +1,3 @@
+*.pt filter=lfs diff=lfs merge=lfs -text
+models/best_decoder_capydata.pt filter=lfs diff=lfs merge=lfs -text
+models/best_encoder_capydata.pt filter=lfs diff=lfs merge=lfs -text

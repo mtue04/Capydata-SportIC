@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capydata - ViSportIC</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="../static/logo.png" alt="Logo" class="logo-image">
+            </div>
+            <h1 class="app-title">ỨNG DỤNG SINH MÔ TẢ ẢNH THỂ THAO</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div id="uploadArea" class="upload-area">
+                    <div class="upload-text">
+                        <strong>Nhấn vào tải ảnh lên hoặc kéo thả vào vùng này</strong>
+                        <span>Chấp nhận PNG, JPG.</span>
+                    </div>
+                </div>
+                <input type="file" id="uploadInput" class="upload-input" accept=".jpg,.jpeg,.png">
+                <button id="generateBtn" class="btn" disabled>TẠO MÔ TẢ CHO ẢNH</button>
+            </div>
+
+            <div class="results-section">
+                <h2 class="section-title">MÔ TẢ CHO ẢNH</h2>
+                <div id="loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Đang tạo mô tả...</p>
+                </div>
+                <div id="captionCards"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+
+</html>
