@@ -1,0 +1,16 @@
+Sport,Original_Images,Original_Captions,Train_Images,Train_Captions,Val_Images,Val_Captions,Test_Images,Test_Captions,Avg_Captions_Per_Image
+Soccer,148,740,0,0,0,0,0,0,5.0
+Volleyball,110,550,0,0,0,0,0,0,5.0
+Baseball,113,565,0,0,0,0,0,0,5.0
+Tennis,136,680,0,0,0,0,0,0,5.0
+Basketball,127,635,0,0,0,0,0,0,5.0
+Badminton,100,500,0,0,0,0,0,0,5.0
+Swimming,113,565,0,0,0,0,0,0,5.0
+Surfing,114,570,0,0,0,0,0,0,5.0
+Archery,131,655,0,0,0,0,0,0,5.0
+Athletics,87,435,0,0,0,0,0,0,5.0
+Equestrianism,142,710,0,0,0,0,0,0,5.0
+Boxing,117,585,0,0,0,0,0,0,5.0
+Golf,128,640,0,0,0,0,0,0,5.0
+Skiing,114,570,0,0,0,0,0,0,5.0
+Cycling,124,620,0,0,0,0,0,0,5.0

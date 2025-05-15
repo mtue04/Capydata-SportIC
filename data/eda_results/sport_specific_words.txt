@@ -1,0 +1,360 @@
+Từ đặc trưng cho môn Soccer:
+sút: xuất hiện 141 lần, độ đặc trưng: 216.21
+khung_thành: xuất hiện 63 lần, độ đặc trưng: 102.82
+ghi_bàn: xuất hiện 38 lần, độ đặc trưng: 62.02
+bóng_đá: xuất hiện 32 lần, độ đặc trưng: 52.23
+thủ_môn: xuất hiện 31 lần, độ đặc trưng: 50.60
+cản_phá: xuất hiện 12 lần, độ đặc trưng: 19.59
+mưa: xuất hiện 11 lần, độ đặc trưng: 17.95
+đánh_đầu: xuất hiện 10 lần, độ đặc trưng: 16.32
+đá: xuất hiện 55 lần, độ đặc trưng: 15.96
+nguy_hiểm: xuất hiện 7 lần, độ đặc trưng: 11.42
+thắng: xuất hiện 7 lần, độ đặc trưng: 11.42
+sân_cỏ: xuất hiện 121 lần, độ đặc trưng: 9.99
+sân_vận_động: xuất hiện 34 lần, độ đặc trưng: 9.86
+hậu_vệ: xuất hiện 6 lần, độ đặc trưng: 9.79
+bàn: xuất hiện 6 lần, độ đặc trưng: 9.79
+tranh_chấp: xuất hiện 29 lần, độ đặc trưng: 9.73
+áp: xuất hiện 9 lần, độ đặc trưng: 9.66
+dứt_điểm: xuất hiện 24 lần, độ đặc trưng: 9.54
+tròn: xuất hiện 5 lần, độ đặc trưng: 8.16
+ẩm_ướt: xuất hiện 5 lần, độ đặc trưng: 8.16
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Volleyball:
+bóng_chuyền: xuất hiện 80 lần, độ đặc trưng: 189.84
+đỡ: xuất hiện 15 lần, độ đặc trưng: 35.60
+chuyền: xuất hiện 33 lần, độ đặc trưng: 29.44
+cứu: xuất hiện 15 lần, độ đặc trưng: 24.09
+lưới: xuất hiện 54 lần, độ đặc trưng: 21.68
+chắn_bóng: xuất hiện 9 lần, độ đặc trưng: 21.36
+đập: xuất hiện 48 lần, độ đặc trưng: 17.52
+chắn: xuất hiện 7 lần, độ đặc trưng: 16.61
+đón: xuất hiện 31 lần, độ đặc trưng: 16.06
+khao_khát: xuất hiện 6 lần, độ đặc trưng: 14.24
+điểm_số: xuất hiện 7 lần, độ đặc trưng: 14.05
+sức_bật: xuất hiện 5 lần, độ đặc trưng: 11.87
+phát_bóng: xuất hiện 55 lần, độ đặc trưng: 11.47
+đội_hình: xuất hiện 5 lần, độ đặc trưng: 10.04
+đồng_đội: xuất hiện 26 lần, độ đặc trưng: 9.49
+đón_nhận: xuất hiện 5 lần, độ đặc trưng: 8.03
+ăn_mừng: xuất hiện 6 lần, độ đặc trưng: 8.03
+đoàn_kết: xuất hiện 6 lần, độ đặc trưng: 8.03
+đồng_phục: xuất hiện 9 lần, độ đặc trưng: 7.61
+tím: xuất hiện 6 lần, độ đặc trưng: 7.41
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Baseball:
+bóng_chày: xuất hiện 102 lần, độ đặc trưng: 222.85
+bắt: xuất hiện 40 lần, độ đặc trưng: 39.22
+baseball: xuất hiện 11 lần, độ đặc trưng: 24.03
+căn_cứ: xuất hiện 11 lần, độ đặc trưng: 24.03
+sọc: xuất hiện 13 lần, độ đặc trưng: 23.90
+nhí: xuất hiện 7 lần, độ đặc trưng: 15.29
+đích: xuất hiện 31 lần, độ đặc trưng: 12.00
+bé: xuất hiện 26 lần, độ đặc trưng: 11.95
+ném: xuất hiện 130 lần, độ đặc trưng: 10.17
+đồng_phục: xuất hiện 8 lần, độ đặc trưng: 5.88
+gậy: xuất hiện 53 lần, độ đặc trưng: 5.57
+tiếp_cận: xuất hiện 5 lần, độ đặc trưng: 5.25
+chú_ý: xuất hiện 9 lần, độ đặc trưng: 4.27
+khu_vực: xuất hiện 6 lần, độ đặc trưng: 4.20
+tràn_đầy: xuất hiện 5 lần, độ đặc trưng: 4.09
+bụi: xuất hiện 10 lần, độ đặc trưng: 3.98
+tỏ: xuất hiện 7 lần, độ đặc trưng: 3.55
+swing: xuất hiện 14 lần, độ đặc trưng: 3.38
+trẻ: xuất hiện 12 lần, độ đặc trưng: 3.27
+quan_sát: xuất hiện 5 lần, độ đặc trưng: 3.20
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Tennis:
+tennis: xuất hiện 117 lần, độ đặc trưng: 217.80
+tay_vợt: xuất hiện 50 lần, độ đặc trưng: 88.45
+giao_bóng: xuất hiện 103 lần, độ đặc trưng: 63.77
+nện: xuất hiện 20 lần, độ đặc trưng: 37.23
+thuận: xuất hiện 18 lần, độ đặc trưng: 33.51
+sân_quần: xuất hiện 16 lần, độ đặc trưng: 29.78
+quần_vợt: xuất hiện 14 lần, độ đặc trưng: 26.06
+vợt: xuất hiện 117 lần, độ đặc trưng: 16.10
+forehand: xuất hiện 7 lần, độ đặc trưng: 13.03
+sân_vận_động_viên: xuất hiện 6 lần, độ đặc trưng: 9.29
+trái: xuất hiện 56 lần, độ đặc trưng: 9.12
+đất: xuất hiện 23 lần, độ đặc trưng: 6.47
+tiếp_xúc: xuất hiện 6 lần, độ đặc trưng: 6.19
+áo_phông: xuất hiện 6 lần, độ đặc trưng: 6.19
+đánh: xuất hiện 224 lần, độ đặc trưng: 4.95
+tiếp_cận: xuất hiện 5 lần, độ đặc trưng: 4.42
+hứa_hẹn: xuất hiện 6 lần, độ đặc trưng: 4.37
+phản_công: xuất hiện 9 lần, độ đặc trưng: 4.29
+phản_ứng: xuất hiện 5 lần, độ đặc trưng: 4.13
+cầm: xuất hiện 21 lần, độ đặc trưng: 4.00
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Basketball:
+bóng_rổ: xuất hiện 138 lần, độ đặc trưng: 271.28
+rổ: xuất hiện 136 lần, độ đặc trưng: 267.35
+dunk: xuất hiện 11 lần, độ đặc trưng: 21.62
+ngăn_chặn: xuất hiện 10 lần, độ đặc trưng: 18.76
+phòng_ngự: xuất hiện 16 lần, độ đặc trưng: 17.51
+ngăn_cản: xuất hiện 11 lần, độ đặc trưng: 16.05
+ném: xuất hiện 174 lần, độ đặc trưng: 15.87
+dribble: xuất hiện 8 lần, độ đặc trưng: 15.73
+chặn: xuất hiện 8 lần, độ đặc trưng: 15.01
+ghi_điểm: xuất hiện 56 lần, độ đặc trưng: 14.42
+trống: xuất hiện 7 lần, độ đặc trưng: 13.76
+đột_phá: xuất hiện 6 lần, độ đặc trưng: 11.79
+khung: xuất hiện 5 lần, độ đặc trưng: 9.83
+cố_gắng: xuất hiện 25 lần, độ đặc trưng: 7.30
+tranh_chấp: xuất hiện 21 lần, độ đặc trưng: 6.89
+chặt_chẽ: xuất hiện 6 lần, độ đặc trưng: 6.57
+cuồng_nhiệt: xuất hiện 9 lần, độ đặc trưng: 6.57
+áp: xuất hiện 6 lần, độ đặc trưng: 6.06
+tím: xuất hiện 6 lần, độ đặc trưng: 6.06
+chứng_kiến: xuất hiện 5 lần, độ đặc trưng: 5.97
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Badminton:
+cầu_lông: xuất hiện 168 lần, độ đặc trưng: 421.37
+cầu: xuất hiện 216 lần, độ đặc trưng: 159.95
+giao: xuất hiện 19 lần, độ đặc trưng: 47.65
+vợt: xuất hiện 89 lần, độ đặc trưng: 12.85
+đập: xuất hiện 36 lần, độ đặc trưng: 10.95
+phát: xuất hiện 12 lần, độ đặc trưng: 6.59
+lơ_lửng: xuất hiện 7 lần, độ đặc trưng: 6.27
+lưới: xuất hiện 23 lần, độ đặc trưng: 5.52
+vung: xuất hiện 34 lần, độ đặc trưng: 4.99
+đỉnh_cao: xuất hiện 5 lần, độ đặc trưng: 4.06
+bật: xuất hiện 17 lần, độ đặc trưng: 3.29
+bay: xuất hiện 63 lần, độ đặc trưng: 3.16
+giải: xuất hiện 5 lần, độ đặc trưng: 3.15
+không_trung: xuất hiện 20 lần, độ đặc trưng: 3.10
+đánh: xuất hiện 120 lần, độ đặc trưng: 3.08
+rơi: xuất hiện 5 lần, độ đặc trưng: 3.04
+thi_đấu: xuất hiện 45 lần, độ đặc trưng: 3.01
+gay_cấn: xuất hiện 6 lần, độ đặc trưng: 3.01
+đèn: xuất hiện 19 lần, độ đặc trưng: 2.97
+tỏ: xuất hiện 5 lần, độ đặc trưng: 2.75
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Swimming:
+bơi: xuất hiện 303 lần, độ đặc trưng: 615.43
+bơi_lội: xuất hiện 89 lần, độ đặc trưng: 213.53
+bể_bơi: xuất hiện 47 lần, độ đặc trưng: 112.76
+hồ: xuất hiện 40 lần, độ đặc trưng: 92.85
+kính: xuất hiện 22 lần, độ đặc trưng: 52.78
+mũ: xuất hiện 21 lần, độ đặc trưng: 50.38
+xuống_nước: xuất hiện 20 lần, độ đặc trưng: 47.98
+lặn: xuất hiện 28 lần, độ đặc trưng: 45.50
+bơi_bướm: xuất hiện 17 lần, độ đặc trưng: 40.79
+bơi_ếch: xuất hiện 17 lần, độ đặc trưng: 40.79
+ngửa: xuất hiện 15 lần, độ đặc trưng: 35.99
+quạt: xuất hiện 14 lần, độ đặc trưng: 33.59
+bơi_sải: xuất hiện 14 lần, độ đặc trưng: 33.59
+tung_toé: xuất hiện 30 lần, độ đặc trưng: 27.08
+làn: xuất hiện 61 lần, độ đặc trưng: 25.42
+mặt_nước: xuất hiện 40 lần, độ đặc trưng: 22.41
+văng: xuất hiện 23 lần, độ đặc trưng: 21.98
+dòng: xuất hiện 9 lần, độ đặc trưng: 21.59
+qua_mặt: xuất hiện 8 lần, độ đặc trưng: 19.19
+thở: xuất hiện 7 lần, độ đặc trưng: 16.79
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Surfing:
+lướt_sóng: xuất hiện 267 lần, độ đặc trưng: 609.45
+sóng: xuất hiện 276 lần, độ đặc trưng: 128.89
+biển: xuất hiện 102 lần, độ đặc trưng: 60.46
+làn_sóng: xuất hiện 50 lần, độ đặc trưng: 55.04
+đợt: xuất hiện 24 lần, độ đặc trưng: 54.78
+lướt_ván: xuất hiện 24 lần, độ đặc trưng: 54.78
+đại_dương: xuất hiện 23 lần, độ đặc trưng: 52.50
+biển_cả: xuất hiện 20 lần, độ đặc trưng: 45.65
+vỗ: xuất hiện 20 lần, độ đặc trưng: 45.65
+cuộn: xuất hiện 18 lần, độ đặc trưng: 41.09
+ván: xuất hiện 103 lần, độ đặc trưng: 36.91
+bao_la: xuất hiện 15 lần, độ đặc trưng: 34.24
+trào: xuất hiện 10 lần, độ đặc trưng: 22.83
+xanh_biếc: xuất hiện 8 lần, độ đặc trưng: 18.26
+surfer: xuất hiện 8 lần, độ đặc trưng: 18.26
+cuồn_cuộn: xuất hiện 8 lần, độ đặc trưng: 18.26
+động: xuất hiện 7 lần, độ đặc trưng: 15.98
+khổng_lồ: xuất hiện 6 lần, độ đặc trưng: 13.70
+mặt_biển: xuất hiện 6 lần, độ đặc trưng: 13.70
+chèo: xuất hiện 6 lần, độ đặc trưng: 13.70
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Archery:
+cung: xuất hiện 384 lần, độ đặc trưng: 408.73
+mũi_tên: xuất hiện 122 lần, độ đặc trưng: 233.72
+dây_cung: xuất hiện 112 lần, độ đặc trưng: 214.56
+kéo: xuất hiện 103 lần, độ đặc trưng: 187.94
+thủ: xuất hiện 95 lần, độ đặc trưng: 75.84
+bắn: xuất hiện 414 lần, độ đặc trưng: 64.49
+căng: xuất hiện 49 lần, độ đặc trưng: 44.70
+mục_tiêu: xuất hiện 145 lần, độ đặc trưng: 42.09
+thả: xuất hiện 31 lần, độ đặc trưng: 30.46
+nhắm: xuất hiện 95 lần, độ đặc trưng: 28.89
+ngắm: xuất hiện 15 lần, độ đặc trưng: 28.74
+bia: xuất hiện 14 lần, độ đặc trưng: 26.82
+giương: xuất hiện 9 lần, độ đặc trưng: 17.24
+kiên_định: xuất hiện 7 lần, độ đặc trưng: 13.41
+tầm: xuất hiện 7 lần, độ đặc trưng: 12.77
+ngoài_trời: xuất hiện 16 lần, độ đặc trưng: 12.02
+kiên_nhẫn: xuất hiện 6 lần, độ đặc trưng: 11.49
+tâm: xuất hiện 6 lần, độ đặc trưng: 11.49
+cắm: xuất hiện 6 lần, độ đặc trưng: 11.49
+bảng: xuất hiện 6 lần, độ đặc trưng: 11.49
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Athletics:
+chạy: xuất hiện 203 lần, độ đặc trưng: 49.14
+nước_rút: xuất hiện 15 lần, độ đặc trưng: 45.02
+điền_kinh: xuất hiện 9 lần, độ đặc trưng: 27.01
+phụ_nữ: xuất hiện 8 lần, độ đặc trưng: 24.01
+bứt_phá: xuất hiện 20 lần, độ đặc trưng: 18.71
+bứt: xuất hiện 8 lần, độ đặc trưng: 18.29
+tốc: xuất hiện 8 lần, độ đặc trưng: 18.29
+ném_tạ: xuất hiện 6 lần, độ đặc trưng: 18.01
+vạch: xuất hiện 8 lần, độ đặc trưng: 16.46
+đường_phố: xuất hiện 6 lần, độ đặc trưng: 12.35
+sức_sống: xuất hiện 8 lần, độ đặc trưng: 10.97
+tăng_tốc: xuất hiện 15 lần, độ đặc trưng: 10.29
+khởi_động: xuất hiện 10 lần, độ đặc trưng: 9.35
+xuất_phát: xuất hiện 20 lần, độ đặc trưng: 7.76
+sân_vận_động: xuất hiện 18 lần, độ đặc trưng: 6.99
+thoáng_đãng: xuất hiện 5 lần, độ đặc trưng: 6.86
+đường_đua: xuất hiện 24 lần, độ đặc trưng: 6.76
+giải: xuất hiện 7 lần, độ đặc trưng: 5.76
+tràn_đầy: xuất hiện 5 lần, độ đặc trưng: 5.72
+năng_lượng: xuất hiện 20 lần, độ đặc trưng: 5.49
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Equestrianism:
+ngựa: xuất hiện 634 lần, độ đặc trưng: 1121.73
+cưỡi: xuất hiện 263 lần, độ đặc trưng: 465.32
+hàng_rào: xuất hiện 34 lần, độ đặc trưng: 60.16
+rào_cản: xuất hiện 31 lần, độ đặc trưng: 54.85
+phi: xuất hiện 21 lần, độ đặc trưng: 37.15
+chướng_ngại_vật: xuất hiện 40 lần, độ đặc trưng: 29.30
+vượt_rào: xuất hiện 16 lần, độ đặc trưng: 28.31
+kết_nối: xuất hiện 14 lần, độ đặc trưng: 24.77
+lưng: xuất hiện 19 lần, độ đặc trưng: 24.74
+truyền_thống: xuất hiện 13 lần, độ đặc trưng: 23.00
+vật: xuất hiện 9 lần, độ đặc trưng: 15.92
+nước_đại: xuất hiện 8 lần, độ đặc trưng: 14.15
+chăm_sóc: xuất hiện 8 lần, độ đặc trưng: 14.15
+cương: xuất hiện 7 lần, độ đặc trưng: 12.38
+rào_chắn: xuất hiện 7 lần, độ đặc trưng: 12.38
+đồng_cỏ: xuất hiện 7 lần, độ đặc trưng: 12.38
+polo: xuất hiện 7 lần, độ đặc trưng: 12.38
+hài_hoà: xuất hiện 8 lần, độ đặc trưng: 11.72
+uyển_chuyển: xuất hiện 14 lần, độ đặc trưng: 10.94
+lông: xuất hiện 6 lần, độ đặc trưng: 10.62
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Boxing:
+đấm: xuất hiện 180 lần, độ đặc trưng: 373.99
+võ_sĩ: xuất hiện 155 lần, độ đặc trưng: 322.04
+đòn: xuất hiện 98 lần, độ đặc trưng: 203.62
+boxing: xuất hiện 81 lần, độ đặc trưng: 168.29
+quyền_anh: xuất hiện 29 lần, độ đặc trưng: 60.25
+sàn: xuất hiện 72 lần, độ đặc trưng: 52.82
+đấu_sĩ: xuất hiện 25 lần, độ đặc trưng: 51.94
+găng_tay: xuất hiện 34 lần, độ đặc trưng: 47.39
+võ_đài: xuất hiện 20 lần, độ đặc trưng: 41.55
+giao_tranh: xuất hiện 17 lần, độ đặc trưng: 33.85
+phòng: xuất hiện 11 lần, độ đặc trưng: 22.85
+phòng_thủ: xuất hiện 35 lần, độ đặc trưng: 22.17
+đấu_trường: xuất hiện 9 lần, độ đặc trưng: 18.70
+đối_đầu: xuất hiện 12 lần, độ đặc trưng: 16.72
+găng: xuất hiện 8 lần, độ đặc trưng: 16.62
+né_tránh: xuất hiện 8 lần, độ đặc trưng: 16.62
+chiến_đấu: xuất hiện 22 lần, độ đặc trưng: 15.33
+quyền: xuất hiện 11 lần, độ đặc trưng: 15.33
+giao_đấu: xuất hiện 7 lần, độ đặc trưng: 14.54
+trọng_tài: xuất hiện 10 lần, độ đặc trưng: 13.94
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Golf:
+golf: xuất hiện 300 lần, độ đặc trưng: 567.54
+golfer: xuất hiện 45 lần, độ đặc trưng: 85.13
+swing: xuất hiện 61 lần, độ đặc trưng: 54.90
+lỗ: xuất hiện 26 lần, độ đặc trưng: 49.19
+tee: xuất hiện 15 lần, độ đặc trưng: 28.38
+putt: xuất hiện 14 lần, độ đặc trưng: 26.49
+bẫy: xuất hiện 14 lần, độ đặc trưng: 26.49
+cờ: xuất hiện 11 lần, độ đặc trưng: 20.81
+gậy: xuất hiện 113 lần, độ đặc trưng: 17.80
+cỏ: xuất hiện 47 lần, độ đặc trưng: 16.01
+hố: xuất hiện 6 lần, độ đặc trưng: 11.35
+cát: xuất hiện 44 lần, độ đặc trưng: 11.09
+mướt: xuất hiện 50 lần, độ đặc trưng: 10.33
+mượt: xuất hiện 5 lần, độ đặc trưng: 9.46
+gạt: xuất hiện 5 lần, độ đặc trưng: 9.46
+green: xuất hiện 5 lần, độ đặc trưng: 9.46
+thư_giãn: xuất hiện 15 lần, độ đặc trưng: 9.45
+chi_tiết: xuất hiện 8 lần, độ đặc trưng: 9.16
+yên_bình: xuất hiện 10 lần, độ đặc trưng: 8.40
+kỹ_lưỡng: xuất hiện 9 lần, độ đặc trưng: 8.10
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Skiing:
+tuyết: xuất hiện 256 lần, độ đặc trưng: 518.24
+trượt_tuyết: xuất hiện 202 lần, độ đặc trưng: 426.25
+sườn: xuất hiện 56 lần, độ đặc trưng: 118.17
+núi: xuất hiện 70 lần, độ đặc trưng: 82.66
+trượt: xuất hiện 119 lần, độ đặc trưng: 60.23
+phủ: xuất hiện 23 lần, độ đặc trưng: 48.53
+đồi: xuất hiện 26 lần, độ đặc trưng: 46.05
+mùa: xuất hiện 21 lần, độ đặc trưng: 37.20
+dày: xuất hiện 15 lần, độ đặc trưng: 31.65
+xuống_dốc: xuất hiện 14 lần, độ đặc trưng: 29.54
+lạnh_giá: xuất hiện 13 lần, độ đặc trưng: 27.43
+lớp: xuất hiện 26 lần, độ đặc trưng: 24.56
+trắng_xoá: xuất hiện 20 lần, độ đặc trưng: 23.62
+vệt: xuất hiện 10 lần, độ đặc trưng: 21.10
+hùng_vĩ: xuất hiện 31 lần, độ đặc trưng: 19.97
+lạnh: xuất hiện 9 lần, độ đặc trưng: 18.99
+mịn_màng: xuất hiện 9 lần, độ đặc trưng: 18.99
+áo_khoác: xuất hiện 10 lần, độ đặc trưng: 17.71
+núi_non: xuất hiện 11 lần, độ đặc trưng: 17.32
+đông: xuất hiện 22 lần, độ đặc trưng: 14.85
+
+--------------------------------------------------
+
+Từ đặc trưng cho môn Cycling:
+xe_đạp: xuất hiện 152 lần, độ đặc trưng: 307.75
+xe: xuất hiện 155 lần, độ đặc trưng: 300.18
+đạp: xuất hiện 157 lần, độ đặc trưng: 236.48
+tay_đua: xuất hiện 77 lần, độ đặc trưng: 155.90
+cua: xuất hiện 21 lần, độ đặc trưng: 42.52
+bánh_xe: xuất hiện 21 lần, độ đặc trưng: 42.52
+khúc: xuất hiện 19 lần, độ đặc trưng: 38.47
+gồ_ghề: xuất hiện 19 lần, độ đặc trưng: 38.47
+địa_hình: xuất hiện 65 lần, độ đặc trưng: 35.25
+đoạn: xuất hiện 23 lần, độ đặc trưng: 28.35
+tay_lái: xuất hiện 13 lần, độ đặc trưng: 26.32
+hành_trình: xuất hiện 11 lần, độ đặc trưng: 22.27
+lái: xuất hiện 11 lần, độ đặc trưng: 22.27
+lái_xe: xuất hiện 10 lần, độ đặc trưng: 20.25
+đường_phố: xuất hiện 10 lần, độ đặc trưng: 20.25
+đường_mòn: xuất hiện 9 lần, độ đặc trưng: 18.22
+hiểm_trở: xuất hiện 8 lần, độ đặc trưng: 16.20
+đua: xuất hiện 128 lần, độ đặc trưng: 16.07
+đường_đua: xuất hiện 50 lần, độ đặc trưng: 14.42
+leo: xuất hiện 7 lần, độ đặc trưng: 14.17
+
+--------------------------------------------------
+

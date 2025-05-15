@@ -1,0 +1,23 @@
+prompt_text = f"""
+    Hãy tạo ra 5 mô tả ngắn gọn cho bức ảnh thể thao dưới đây, mỗi mô tả có độ dài tự nhiên khoảng 15 từ.
+    Mỗi câu phải đồng thời đảm bảo mô tả đầy đủ các yếu tố sau trong một cách tự nhiên, trôi chảy:
+
+    📌 **Yêu cầu bắt buộc cho từng câu caption (áp dụng cho TẤT CẢ 5 câu)**:
+    - Mô tả **hành động/động tác** thể thao chính xác đang diễn ra trong ảnh; **vận động viên** (trang phục, tư thế, vị trí) nhưng KHÔNG nêu tên riêng hoặc số; **môi trường/bối cảnh** nếu có thể nhận diện (sân, không gian, thời tiết...); xác định chính xác **môn thể thao**
+    - TUYỆT ĐỐI KHÔNG sử dụng tên riêng, tên đội, câu lạc bộ hoặc bất kỳ số thứ tự nào
+
+    📌 **Yêu cầu phong cách diễn đạt**:
+    - Ngôn ngữ sinh động, chuyên môn như một bình luận viên thể thao chuyên nghiệp
+    - Tập trung vào các thuật ngữ đặc thù của môn thể thao đó
+    - Sử dụng đúng thuật ngữ tiếng Việt, KHÔNG dùng từ tiếng Anh
+    - Viết bằng văn phong mạch lạc, rõ nghĩa và hấp dẫn
+
+    📌 **Format kết quả** (tuân thủ chặt chẽ, KHÔNG để dòng trắng, thừa dòng):
+        {file_name}\t[caption 1]
+        {file_name}\t[caption 2]
+        {file_name}\t[caption 3]
+        {file_name}\t[caption 4]
+        {file_name}\t[caption 5]
+
+    Dưới đây là ảnh cần mô tả:
+"""
