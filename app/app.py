@@ -8,7 +8,7 @@ from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
 import json
 import logging
-# from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer
 import numpy as np
 
 app = Flask(__name__)
@@ -18,8 +18,23 @@ app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16MB max upload
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-# # Load Vietnamese Embedding model
-# embed_model = SentenceTransformer("AITeamVN/Vietnamese_Embedding")
+# Load Vietnamese Embedding model
+embed_model = SentenceTransformer("AITeamVN/Vietnamese_Embedding")
+
+# Load vocabulary early to avoid NameError
+vocab_path = "data/capydata_ic/vocab/vocab.json"
+idx_to_word_path = "data/capydata_ic/vocab/idx_to_word.json"
+if not os.path.exists(vocab_path) or not os.path.exists(idx_to_word_path):
+    logger.error(f"Vocabulary file missing: {vocab_path} or {idx_to_word_path}")
+    raise FileNotFoundError("Vocabulary files not found")
+
+logger.info("Loading vocabulary...")
+with open(vocab_path, "r", encoding="utf-8") as f:
+    vocab = {k: int(v) for k, v in json.load(f).items()}
+with open(idx_to_word_path, "r", encoding="utf-8") as f:
+    idx_to_word = {int(k): v for k, v in json.load(f).items()}
+vocab_size = len(vocab)
+logger.info(f"Loaded vocab, size: {vocab_size}")
 
 
 def allowed_file(filename):
@@ -114,8 +129,9 @@ class ImageCaptionModel(nn.Module):
         encoded_size=256,
         embed_size=256,
         hidden_size=512,
-        vocab_size=None,
+        vocab_size=vocab_size,
         attention_dim=256,
+        device="cuda" if torch.cuda.is_available() else "cpu",
     ):
         super().__init__()
         self.encoder = EncoderCNN(encoded_size=encoded_size)
@@ -126,6 +142,8 @@ class ImageCaptionModel(nn.Module):
             encoder_dim=encoded_size,
             attention_dim=attention_dim,
         )
+        self.device = device
+        self.to(device)
 
     def forward(self, images, captions, teacher_forcing_ratio=0.5):
         features = self.encoder(images)
@@ -135,29 +153,24 @@ class ImageCaptionModel(nn.Module):
     @torch.no_grad()
     def generate_caption(self, image, vocab, idx_to_word, max_length=20, beam_width=5):
         self.eval()
-        # image = image.unsqueeze(0).to(image.device)
-        image = image.to(image.device)
+        image = image.to(self.device)
         features = self.encoder(image).unsqueeze(1)
         sequences = [[[], 0.0, [features, None]]]
         for _ in range(max_length):
             all_candidates = []
             for seq, score, state in sequences:
-                if len(seq) > 0 and seq[-1] == vocab["</s>"]:
+                if seq and seq[-1] == vocab["</s>"]:
                     all_candidates.append([seq, score, state])
                     continue
-                if len(seq) == 0:
-                    token = torch.tensor([[vocab["<s>"]]], device=image.device)
-                else:
-                    token = torch.tensor([[seq[-1]]], device=image.device)
+                token_id = vocab["<s>"] if not seq else seq[-1]
+                token = torch.tensor([[token_id]], device=self.device)
                 embed = self.decoder.embedding(token)
-                context, _ = self.decoder.attention(
-                    state[0],
-                    (
-                        state[1][0]
-                        if state[1]
-                        else torch.zeros(1, self.decoder.hidden_size).to(image.device)
-                    ),
+                decoder_hidden = (
+                    state[1][0]
+                    if state[1]
+                    else torch.zeros(1, self.decoder.hidden_size, device=self.device)
                 )
+                context, _ = self.decoder.attention(state[0], decoder_hidden)
                 input_lstm = torch.cat([embed.squeeze(1), context], dim=1)
                 if state[1] is None:
                     h, c = self.decoder.lstm(input_lstm)
@@ -167,12 +180,10 @@ class ImageCaptionModel(nn.Module):
                 output = torch.softmax(output, dim=-1)
                 top_probs, top_indices = output.topk(beam_width)
                 for i in range(beam_width):
-                    next_seq = seq + [top_indices[0, i].item()]
-                    next_score = (
-                        score
-                        + torch.log(top_probs[0, i]).item()
-                        - 0.1 * next_seq.count(top_indices[0, i].item())
-                    )
+                    next_token = top_indices[0, i].item()
+                    penalty = 0.1 * sum(1 for t in seq if t == next_token)
+                    next_seq = seq + [next_token]
+                    next_score = score + torch.log(top_probs[0, i]).item() - penalty
                     all_candidates.append([next_seq, next_score, [features, (h, c)]])
             sequences = sorted(all_candidates, key=lambda x: x[1], reverse=True)[
                 :beam_width
@@ -184,7 +195,7 @@ class ImageCaptionModel(nn.Module):
                 for idx in seq
                 if idx not in [vocab["<s>"], vocab["</s>"]]
             ]
-            captions.append(" ".join(caption))
+            captions.append((" ".join(caption), score))
         return captions
 
 
@@ -211,7 +222,6 @@ def process_image(image_path):
     transform = transforms.Compose(
         [
             transforms.Resize((224, 224)),
-            transforms.RandomHorizontalFlip(p=0.5),
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
         ]
@@ -233,70 +243,105 @@ def process_caption(caption):
 
 
 # Load models
-def load_models():
-    vocab_path = "data/vocab/vocab.json"
-    idx_to_word_path = "data/vocab/idx_to_word.json"
-    model_path = "models/best_base_resnet50_lstm.pth"
+def load_models(
+    vocab_path="data/capydata_ic/vocab/vocab.json",
+    idx_to_word_path="data/capydata_ic/vocab/idx_to_word.json",
+    model_path="models/2_cnn_lstm_attention.pth",
+    embed_file_path="models/pretrained_embeds.npy",
+):
+    logger.info("Starting to load models...")
 
+    # Check file existence
     for file_path in [vocab_path, idx_to_word_path, model_path]:
         if not os.path.exists(file_path):
             logger.error(f"File doesn't exist: {file_path}")
             raise FileNotFoundError(f"Couldn't find file: {file_path}")
 
-    logger.info("All model files found, starting to load models...")
-    global vocab_obj
-    vocab_obj = ImageCaptionVocab(
-        vocab_path=vocab_path, idx_to_word_path=idx_to_word_path
-    )
-    vocab = vocab_obj.get_vocab()
-    vocab_size = len(vocab)
-    idx_to_word = vocab_obj.idx_to_word
-    logger.info(f"Loaded vocab, size: {vocab_size}")
+    # Load vocabulary
+    logger.info("Loading vocabulary...")
+    try:
+        vocab_obj = ImageCaptionVocab(
+            vocab_path=vocab_path, idx_to_word_path=idx_to_word_path
+        )
+        vocab = vocab_obj.get_vocab()
+        idx_to_word = vocab_obj.idx_to_word
+        vocab_size = len(vocab)
+        logger.info(f"Loaded vocab, size: {vocab_size}")
+    except Exception as e:
+        logger.error(f"Failed to load vocabulary: {e}")
+        raise
 
+    # Set device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logger.info(f"Using device: {device}")
 
-    encoded_size = 256
-    embed_size = 256
-    hidden_size = 512
-    attention_dim = 256
-
+    # Initialize model
     logger.info("Initializing model...")
     model = ImageCaptionModel(
-        encoded_size=encoded_size,
-        embed_size=embed_size,
-        hidden_size=hidden_size,
+        encoded_size=256,
+        embed_size=256,
+        hidden_size=512,
         vocab_size=vocab_size,
-        attention_dim=attention_dim,
+        attention_dim=256,
+        device=device,
     ).to(device)
 
-    # # Load Vietnamese embeddings
-    # logger.info("Loading Vietnamese embeddings...")
-    # pretrained_embeds = np.zeros((vocab_size, embed_size))
-    # for word, idx in vocab.items():
-    #     embed = embed_model.encode([word])[0]
-    #     pretrained_embeds[idx] = embed[:embed_size]
-    # np.save("models/pretrained_embeds.npy", pretrained_embeds)
-    # model.decoder.embedding.weight.data = torch.tensor(
-    #     pretrained_embeds, dtype=torch.float32
-    # ).to(device)
-    # model.decoder.embedding.weight.requires_grad = True
+    # Load or generate Vietnamese embeddings
+    logger.info(f"Checking for Vietnamese embeddings at {embed_file_path}...")
+    if os.path.exists(embed_file_path):
+        logger.info("Loading Vietnamese embeddings from file...")
+        try:
+            pretrained_embeds = np.load(embed_file_path)
+            if pretrained_embeds.shape != (vocab_size, 256):
+                logger.error(
+                    f"Embedding file shape {pretrained_embeds.shape} does not match expected ({vocab_size}, 256)"
+                )
+                raise ValueError("Embedding file shape mismatch")
+            model.decoder.embedding.weight.data = torch.tensor(
+                pretrained_embeds, dtype=torch.float32
+            ).to(device)
+            logger.info("Embeddings loaded successfully")
+        except Exception as e:
+            logger.error(f"Failed to load embeddings from {embed_file_path}: {e}")
+            raise
+    else:
+        logger.info("Embedding file not found. Generating Vietnamese embeddings...")
+        pretrained_embeds = np.zeros((vocab_size, 256))
+        words = list(vocab.keys())
+        batch_size = 128
+        for i in range(0, len(words), batch_size):
+            batch_words = words[i : i + batch_size]
+            try:
+                embeds = embed_model.encode(batch_words)
+                for word, embed in zip(batch_words, embeds):
+                    idx = vocab[word]
+                    pretrained_embeds[idx] = embed[:256]
+            except Exception as e:
+                logger.warning(f"Failed to encode batch starting at index {i}: {e}")
+                for word in batch_words:
+                    idx = vocab[word]
+                    pretrained_embeds[idx] = np.zeros(256)
+        os.makedirs(os.path.dirname(embed_file_path), exist_ok=True)
+        np.save(embed_file_path, pretrained_embeds)
+        logger.info(f"Embeddings generated and saved to {embed_file_path}")
+        model.decoder.embedding.weight.data = torch.tensor(
+            pretrained_embeds, dtype=torch.float32
+        ).to(device)
 
-    # Load Vietnamese embeddings từ file đã lưu
-    logger.info("Loading Vietnamese embeddings from file...")
-    pretrained_embeds = np.load("models/pretrained_embeds.npy")
-    model.decoder.embedding.weight.data = torch.tensor(
-        pretrained_embeds, dtype=torch.float32
-    ).to(device)
     model.decoder.embedding.weight.requires_grad = True
 
-    logger.info("Loading model weights...")
-    checkpoint = torch.load(model_path, map_location=device, weights_only=True)
-    model.load_state_dict(checkpoint)
+    # Load model weights
+    logger.info(f"Loading model weights from {model_path}...")
+    try:
+        checkpoint = torch.load(model_path, map_location=device, weights_only=True)
+        model.load_state_dict(checkpoint)
+        logger.info("Model weights loaded successfully")
+    except Exception as e:
+        logger.error(f"Failed to load model weights from {model_path}: {e}")
+        raise
 
     model.eval()
     logger.info("Model loaded successfully")
-
     return model, vocab, idx_to_word, device
 
 
@@ -312,13 +357,11 @@ def index():
 @app.route("/predict", methods=["POST"])
 def predict():
     logger.info("Received POST request to /predict")
-
     if "image" not in request.files:
         logger.error("No image found in request")
         return jsonify({"error": "No file part in the request"}), 400
 
     file = request.files["image"]
-
     if file.filename == "":
         logger.error("No file selected")
         return jsonify({"error": "No file selected"}), 400
@@ -327,7 +370,6 @@ def predict():
         filename = secure_filename(file.filename)
         try:
             logger.info("Starting image processing")
-            # Process image directly from stream
             image_tensor = process_image(file.stream).to(device)
             logger.info(f"Image tensor shape: {image_tensor.shape}")
 
@@ -337,9 +379,7 @@ def predict():
                     image_tensor, vocab, idx_to_word, max_length=20, beam_width=5
                 )
                 logger.info(f"Generated {len(captions)} captions")
-
-                # Process captions
-                processed_captions = [process_caption(cap) for cap in captions]
+                processed_captions = [process_caption(cap[0]) for cap in captions]
                 for i, cap in enumerate(processed_captions):
                     logger.info(f"Generated caption {i+1}: {cap}")
 
