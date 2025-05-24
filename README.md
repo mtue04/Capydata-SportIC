@@ -45,8 +45,10 @@ conda activate capydata-env
     - Word frequency analysis
     - Image quality checks
 - Model Performance Metrics:
-    - BLEU, ROUGE (n-gram-based)
+    - BLEU-{1-4}
+    - ROUGE-L
     - BERTScore (semantic similarity)
+    - CIDEr
 
 ## Modeling Approaches
 
@@ -59,12 +61,10 @@ Four different approaches were considered for training the model:
 - CNN + LSTM + Attention (Show, Attend and Tell)
 
 3. Transformer-Based Pipeline:
-- CNN/ViT + Transformer (e.g., BART, T5)
+- CNN/ViT + Transformer (T5)
 
-4. Modern Pretrained Models:
-- Encoder: CLIP, Oscar, ViT
-- Decoder: GPT/Vision-Language Transformers
-- Fine-tuning models like BLIP-2 or multimodal architectures
+4. Multimodal:
+- Qwen2-VL
 
 ## How to Contribute
 
@@ -77,9 +77,6 @@ If you want to contribute to this project, follow these steps:
 ## License
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute it with proper attribution.
-
-## Group's Resources (Timeline, Meeting notes, Docs)
-- [Project Drive](https://drive.google.com/drive/u/0/folders/1bOzHSAkUOj7Zp-7Flf7NnK-F441BHmwe).
 
 ## Contributors
 This project is done by the Capydata group, University of Science, VNU-HCM.
